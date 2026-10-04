@@ -1,7 +1,7 @@
 import type { Reservation, ConflictResult } from '../types';
 import { isDateRangeOverlap } from './dates';
 
-export function detectConflicts(
+export function checkConflicts(
   assetId: string,
   startDate: Date,
   endDate: Date,
@@ -19,3 +19,6 @@ export function detectConflicts(
     conflictingReservations: conflicts,
   };
 }
+
+// Alias for backward compatibility
+export const detectConflicts = checkConflicts;
